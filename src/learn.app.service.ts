@@ -7,6 +7,6 @@ export class AppService {
   }
 
   getViewName(): string {
-    return "index";
+    return 'index';
   }
 }

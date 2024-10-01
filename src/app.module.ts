@@ -4,6 +4,7 @@ import { UserModule } from './user/user.module';
 import { BookmarkModule } from './bookmark/bookmark.module';
 import { DatabaseModule } from './database/database.module';
 import { ConfigModule } from '@nestjs/config';
+import { AuthVModule } from './auth-v/auth-v.module';
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { ConfigModule } from '@nestjs/config';
     UserModule,
     BookmarkModule,
     DatabaseModule,
+    AuthVModule,
   ],
   controllers: [],
   providers: [],

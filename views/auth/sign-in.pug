@@ -1,0 +1,31 @@
+doctype
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        title Hello
+    body(
+        style='background-color: #2e2e2e'
+    )
+        h1(
+            class='title'
+        ) Welcome to the bookmarks app!
+        //- p #{message == 'Hello world!' ? 'gaa' : 'gee'} #{message}
+        form(action="/auth/sign-in" method="POST")
+            label(for="email") email:
+            br
+            input(type="email", name="email")
+            br
+            label(for="password") password:
+            br
+            input(type="password", name="password")
+            br
+            br
+            input(type="submit", value="Submit")
+        div
+            if email && password
+                p email: #{email}
+                p password: #{password}
+
+
+        link(rel="stylesheet", href="/css/index.css", attr)
+        link(rel="stylesheet", href="/css/auth/sign-in.css", attr)

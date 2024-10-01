@@ -1,4 +1,4 @@
-import { Controller, Get, Req, Res,  } from '@nestjs/common';
+import { Controller, Get, Req, Res } from '@nestjs/common';
 import { AppService } from './learn.app.service';
 import { Request, Response } from 'express';
 
@@ -17,19 +17,18 @@ export class AppController {
   //   return { message: 'Hello world!' };
   // }
 
-  @Get("/test")
+  @Get('/test')
   getHello(@Req() req: Request, @Res() res: Response) {
-    const ssrEnabled = req.query.ssr
-    console.log('ssrEnabled', ssrEnabled)
+    const ssrEnabled = req.query.ssr;
+    console.log('ssrEnabled', ssrEnabled);
     if (ssrEnabled && ssrEnabled == 'true') {
-      return res.render(
-        this.appService.getViewName(),
-        { message: 'Hello world!' },
-      );
+      return res.render(this.appService.getViewName(), {
+        message: 'Hello world!',
+      });
     } else {
       return res.json({
-        "message": "Hello world!"
-      })
+        message: 'Hello world!',
+      });
     }
   }
 }
